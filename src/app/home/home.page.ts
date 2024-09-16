@@ -17,6 +17,9 @@ export class HomePage implements OnInit {
   private longitude: number | any;
 
   public async ngOnInit() {
+    // this.longitude = 116.306277;
+    // this.latitude = -8.899927;
+
     // Get the current position
     const position = await Geolocation.getCurrentPosition();
     this.latitude = position.coords.latitude;
@@ -24,7 +27,8 @@ export class HomePage implements OnInit {
 
     // Create the map
     const map = new Map({
-      basemap: "topo-vector"
+      // basemap: "topo-vector"
+      basemap: "dark-gray"
     });
 
     // Create the map view
@@ -44,7 +48,7 @@ export class HomePage implements OnInit {
     // Create a marker symbol
     const markerSymbol = {
       type: "simple-marker", // autocasts as new SimpleMarkerSymbol()
-      color: [226, 119, 40], // Orange
+      color: [9, 255, 207], 
       outline: {
         color: [255, 255, 255], // White
         width: 3
