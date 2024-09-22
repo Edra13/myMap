@@ -3,6 +3,13 @@
     <ion-title>
       Edra's Simple Map
     </ion-title>
+    <div class="header-controls" slot="end">
+      <select class="basemap-select" (change)="onBasemapChange($event)">
+        <option *ngFor="let basemap of basemapList" [value]="basemap.value">
+          {{ basemap.label }}
+        </option>
+      </select>
+    </div>
   </ion-toolbar>
 </ion-header>
 
@@ -14,5 +21,4 @@
   </ion-header>
 
   <div id="container"></div>
-   
 </ion-content>
